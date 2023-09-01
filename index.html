@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strona Firmy</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY"></script>
+</head>
+
+<body>
+    <header>
+        <img src="logo.jpg" alt="Logo Firmy" id="logo">
+    </header>
+    <main>
+        <div class="tile" id="about">
+            <h2>O nas</h2>
+            <div class="content">
+                <h3>Czym zajmuje się firma?</h3>
+                <p>[tekst]</p>
+                <h3>Jakie projekty wykonujemy</h3>
+                <p>[tekst]</p>
+                <h3>Dla kogo pracujemy</h3>
+                <p>[tekst]</p>
+            </div>
+        </div>
+        <div class="tile" id="gallery">
+            <h2>Galeria</h2>
+            <div class="content">
+                <!-- obrazy wykonanych detali -->
+                <img src="detail1.jpg" alt="Detail 1">
+                <img src="detail2.jpg" alt="Detail 2">
+                <img src="detail1.jpg" alt="Detail 1">
+                <img src="detail2.jpg" alt="Detail 2">
+                <img src="detail1.jpg" alt="Detail 1">
+                <img src="detail2.jpg" alt="Detail 2">
+                <img src="detail1.jpg" alt="Detail 1">
+                <img src="detail2.jpg" alt="Detail 2">
+                <img src="detail1.jpg" alt="Detail 1">
+                <img src="detail2.jpg" alt="Detail 2">
+                <img src="detail1.jpg" alt="Detail 1">
+                <img src="detail2.jpg" alt="Detail 2">
+                <!-- ... -->
+            </div>
+        </div>
+        <div class="tile" id="contact">
+            <h2>Kontakt</h2>
+            <div class="content">
+                <p>Adres: [adres firmy]</p>
+                <p>Email: [email firmy]</p>
+                <p>Telefon: [numer telefonu firmy]</p>
+                <!-- mapa Google Maps z lokalizacją firmy -->
+                <div id="map"></div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2023 Twoja Firma. Wszelkie prawa zastrzeżone.</p>
+    </footer>
+    <script>
+        function initMap() {
+            var companyLocation = {lat: -34.397, lng: 150.644};
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 16,
+                center: companyLocation
+            });
+            var marker = new google.maps.Marker({
+                position: companyLocation,
+                map: map
+            });
+        }
+
+        window.onload = initMap;
+    </script>
+</body>
+
+</html>
